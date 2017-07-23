@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>AngularJS Tutorial</title>
+        <script src="Scripts/angular.js"></script>
+        <style>
+            div {
+            border: 1px solid green;
+            width: 100%;
+            height: 50 px;
+            display: block;
+            margin: 15px 0 0 10px;
+            text-align: center;
+            background-color: yellow;
+            }
+        </style>
+    </head>
+    <body ng-app ng-init="students=['Bill', 'Steve', 'Ram']; checked=true">
+        <h1>First AngularJS Application</h1>
+        Enter Numbers to Multiply:
+        <input type="text" ng-model="Num1" />
+        x <input type="text" ng-model="Num2" />
+        = <span>{{Num1 * Num2}}</span>
+        <script>
+           
+        </script>
+        <div>
+            2 + 2 = {{2 + 2}} <br />
+            2 - 2 = {{2 - 2}} <br />
+            2 * 2 = {{2 * 2}} <br />
+            2 / 2 = {{2 / 2}}
+        </div>
+        Click Me: <input type="checkbox" ng-model="checked" /> <br />
+        <div>
+            New: <input ng-if="checked" type="text" />
+        </div>
+        <div>
+            Read-only: <input ng-readonly="checked" type="text" value="This is read-only."  />
+        </div>
+        <div>
+            Disabled: <input ng-disabled="checked" type="text" value="This is disabled." />
+        </div>
+        <div ng-init="greet='Hello World!'; amount= 1000; rateOfInterest= 10.5; duration= 10; myArr = [100, 200]; 
+             person = {firstName: 'Steve', lastName: 'Williams'}">
+        {{ (amount * rateOfInterst * duration) / 100}} <br />
+        {{myArr[1]}} <br />
+        {{person.firstName + " " + person.lastName}}
+        </div>
+        <div>
+            <br />
+            Enter your name: <input type="text" ng-model="name" /><br />
+            Hello <label ng-bind="name"></label>
+
+        </div>
+        <div>
+            5 + 5 = <span ng-bind="5 + 5"></span><br />
+        </div>
+        <ol>
+            <li ng-repeat="name in students">
+                {{name}}
+            </li>
+        </ol>
+        <div ng-repeat="name in students">
+            {{name}}
+        </div>
+    </body>
+</html>
